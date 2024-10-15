@@ -16,7 +16,7 @@ public class JsonController {
     String save(@RequestBody String taskinfo,@RequestParam("id") int id){
         String path = String.format("storage/%d.txt",id);
         storage.write(path, taskinfo);
-        return "Task Added";
+        return "Task Added successfully";
     }
 
 
