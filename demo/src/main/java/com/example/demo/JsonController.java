@@ -14,7 +14,7 @@ public class JsonController {
     @RequestMapping("/greet")
     String greet(@RequestParam("name") String name){
         String response = "Hello " + name;
-        return name;
+        return response;
     }
 
 
