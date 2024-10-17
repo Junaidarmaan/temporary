@@ -1,5 +1,5 @@
-# Use an official Maven image with Amazon Corretto as the JDK
-FROM maven:3.8.6-amazoncorretto-17 AS build
+# Use an official Maven image to build the application
+FROM maven:3.9.9-amazoncorretto-21-debian AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -9,8 +9,8 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Use a Corretto image to run the application
-FROM amazoncorretto:17
+# Use OpenJDK image to run the application
+FROM amazoncorretto:21
 
 # Set the working directory
 WORKDIR /app
