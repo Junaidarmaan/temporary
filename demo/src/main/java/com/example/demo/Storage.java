@@ -1,8 +1,8 @@
 package com.example.demo;
 
-import java.io.File;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -33,6 +33,8 @@ public class Storage {
         return content.toString();
     }
 
+
+    // Creating New User (Creating a new file for that use)
     public String newUser(String path){
         File file = new File(path);
         String response = new String();
@@ -40,9 +42,9 @@ public class Storage {
         try {
             // Create the file
             if (file.createNewFile()) {
-                response =  "File created: " + file.getAbsolutePath();
+                response =  "User created: " + file.getAbsolutePath();
             } else {
-                response =  "File already exists.";
+                response =  "User already exists please provide a different id";
             }
         } catch (IOException e) {
             System.out.println("An error occurred: " + e.getMessage());
