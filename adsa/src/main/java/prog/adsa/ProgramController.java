@@ -67,4 +67,8 @@ public class ProgramController {
     public String allPairsShortestPath() {
         return programService.allPairsShortestPath();
     }
+     @GetMapping("/queens")
+    public String queens() {
+        return programService.queens();
+    }
 }
