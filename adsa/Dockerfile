@@ -1,18 +1,21 @@
 # Use an official Maven image to build the application
-FROM maven:3.9.4-openjdk-23 AS build
+FROM maven:3.9.4-openjdk-17 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the pom.xml and source code
+# Copy the pom.xml file and resolve dependencies
 COPY pom.xml .
+RUN mvn dependency:go-offline -B
+
+# Copy the source code into the container
 COPY src ./src
 
-# Build the application
+# Build the application without running tests
 RUN mvn clean package -DskipTests
 
-# Use a smaller image for running the application
-FROM openjdk:23-jdk-slim
+# Use a smaller OpenJDK image for running the application
+FROM openjdk:17-jdk-slim
 
 # Set the working directory
 WORKDIR /app
