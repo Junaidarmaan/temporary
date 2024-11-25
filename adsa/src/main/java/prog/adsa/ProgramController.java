@@ -13,57 +13,57 @@ public class ProgramController {
         this.programService = programService;
     }
 
-    @GetMapping("/heapSort")
+    @GetMapping("/heap")
     public String heapSort() {
         return programService.heapSort();
     }
 
-    @GetMapping("/breadthFirstSearch")
+    @GetMapping("/bfs")
     public String breadthFirstSearch() {
         return programService.breadthFirstSearch();
     }
 
-    @GetMapping("/depthFirstSearch")
+    @GetMapping("/dfs")
     public String depthFirstSearch() {
         return programService.depthFirstSearch();
     }
 
-    @GetMapping("/bruteForceStringMatching")
+    @GetMapping("/brute")
     public String bruteForceStringMatching() {
         return programService.bruteForceStringMatching();
     }
 
-    @GetMapping("/boyerMooreStringMatching")
+    @GetMapping("/boyer")
     public String boyerMooreStringMatching() {
         return programService.boyerMooreStringMatching();
     }
 
-    @GetMapping("/quickSort")
+    @GetMapping("/qs")
     public String quickSort() {
         return programService.quickSort();
     }
 
-    @GetMapping("/mergeSort")
+    @GetMapping("/ms")
     public String mergeSort() {
         return programService.mergeSort();
     }
 
-    @GetMapping("/dijkstraAlgorithm")
+    @GetMapping("/sssp")
     public String dijkstraAlgorithm() {
         return programService.dijkstraAlgorithm();
     }
 
-    @GetMapping("/fractionalKnapsack")
+    @GetMapping("/ks")
     public String fractionalKnapsack() {
         return programService.fractionalKnapsack();
     }
 
-    @GetMapping("/jobSequencingWithDeadlines")
+    @GetMapping("/jswd")
     public String jobSequencingWithDeadlines() {
         return programService.jobSequencingWithDeadlines();
     }
 
-    @GetMapping("/allPairsShortestPath")
+    @GetMapping("/apsp")
     public String allPairsShortestPath() {
         return programService.allPairsShortestPath();
     }
